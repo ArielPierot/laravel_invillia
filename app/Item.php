@@ -13,4 +13,9 @@ class Item extends Model
         'price',
         'ship_order_id'
     ];
+
+    public function shipOrder()
+    {
+        return $this->belongsTo('App\ShipOrder');
+    }
 }

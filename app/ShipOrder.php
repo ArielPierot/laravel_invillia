@@ -13,4 +13,14 @@ class ShipOrder extends Model
         'shipto_country',
         'people_id'
     ];
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
+
+    public function items()
+    {
+        return $this->hasMany('App\Item');
+    }
 }

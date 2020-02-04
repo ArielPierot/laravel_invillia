@@ -11,4 +11,14 @@ class Person extends Model
     ];
 
     protected $table = "people";
+
+    public function shipOrders()
+    {
+        return $this->hasMany('App\ShipOrder');
+    }
+
+    public function phones()
+    {
+        return $this->hasMany('App\Phone');
+    }
 }

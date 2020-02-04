@@ -10,4 +10,9 @@ class Phone extends Model
         'number',
         'people_id'
     ];
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
 }
