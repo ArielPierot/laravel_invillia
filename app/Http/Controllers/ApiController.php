@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterUserRequest;
 use App\Person;
 use App\ShipOrder;
+use App\Transformers\PersonTransformer;
+use App\Transformers\ShipOrderTransformer;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,19 +16,8 @@ class ApiController extends Controller
 {
     public $successStatus = 200;
 
-    public function register(Request $request) {
-        $validator = Validator::make($request->all(),
-            [
-                'name' => 'required',
-                'email' => 'required|email',
-                'password' => 'required'
-            ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
-        }
-
-        $input = $request->all();
+    public function register(RegisterUserRequest $request) {
+        $input = $request->validated();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('Invillia')->accessToken;
@@ -49,11 +41,11 @@ class ApiController extends Controller
 
     public function getPeople()
     {
-        return Person::get();
+        return fractal(Person::get(), new PersonTransformer());
     }
 
     public function getShipOrders()
     {
-        return ShipOrder::get();
+        return fractal(ShipOrder::get(), new ShipOrderTransformer());
     }
 }

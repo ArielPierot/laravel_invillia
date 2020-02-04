@@ -14,11 +14,11 @@ class Person extends Model
 
     public function shipOrders()
     {
-        return $this->hasMany('App\ShipOrder');
+        return $this->hasMany('App\ShipOrder', 'people_id');
     }
 
     public function phones()
     {
-        return $this->hasMany('App\Phone');
+        return $this->hasMany('App\Phone', 'people_id');
     }
 }

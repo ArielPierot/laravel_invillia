@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ImportXMLFilesRequest;
 use App\Item;
 use App\Person;
 use App\Phone;
@@ -16,7 +17,7 @@ class ImportXMLFilesController extends Controller
         return view('xml_files.create');
     }
 
-    public function store(Request $request)
+    public function store(ImportXMLFilesRequest $request)
     {
         $file = $request->file('file');
         $xmlFile = (array) new SimpleXMLElement($file, null, true);
