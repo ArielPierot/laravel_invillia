@@ -36,7 +36,8 @@ class ItemTransformer extends TransformerAbstract
             'id'      => (int) $item->id,
             'title'   => $item->title,
             'note'   => $item->note,
-            'quantity'   => $item->quantity
+            'quantity'   => $item->quantity,
+            'price'   => $item->price
         ];
     }
 }

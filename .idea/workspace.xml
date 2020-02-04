@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28cb9f13-b57b-4c96-b002-6f8becbd14ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ImportXMLFilesRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/RegisterUserRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Transformers/ItemTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Transformers/PersonTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Transformers/PhoneTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Transformers/ShipOrderTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/fractal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel_invillia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel_invillia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php_cs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.php_cs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImportXMLFilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImportXMLFilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transformers/ItemTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/ItemTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transformers/PersonTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/PersonTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580822904090</updated>
       <workItem from="1580822905606" duration="7353000" />
-      <workItem from="1580832643160" duration="9871000" />
+      <workItem from="1580832643160" duration="11346000" />
     </task>
     <servers />
   </component>
@@ -203,10 +195,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="731" y="310" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580843787814">
+    <state x="731" y="292" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580845237172">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="731" y="310" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1580843787814" />
+    <state x="731" y="292" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1580845237172" />
     <state x="781" y="310" width="424" height="497" key="FileChooserDialogImpl" timestamp="1580833553835">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -219,10 +211,14 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="641" y="286" width="1095" height="528" key="find.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580842664246" />
-    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup" timestamp="1580843815058">
+    <state x="659" y="249" key="run.anything.popup" timestamp="1580845066608">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="659" y="249" key="run.anything.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580845066608" />
+    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup" timestamp="1580844938721">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741/1366.0.1366.768@67.27.1299.741" timestamp="1580823942016" />
-    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580843815058" />
+    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580844938721" />
   </component>
 </project>

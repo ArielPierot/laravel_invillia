@@ -48,5 +48,4 @@ class PersonTransformer extends TransformerAbstract
     {
         return $this->collection($person->shipOrders()->get(), new ShipOrderTransformer());
     }
-
 }
