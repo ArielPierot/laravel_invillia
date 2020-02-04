@@ -11,35 +11,33 @@ use SimpleXMLElement;
 
 class ImportXMLFilesController extends Controller
 {
-    function create(){
+    public function create()
+    {
         return view('xml_files.create');
     }
 
-    function store(Request $request){
-
+    public function store(Request $request)
+    {
         $file = $request->file('file');
         $xmlFile = (array) new SimpleXMLElement($file, null, true);
 
-        if(isset($xmlFile['person'])){
-            foreach ($xmlFile['person'] as $xml)
-            {
+        if (isset($xmlFile['person'])) {
+            foreach ($xmlFile['person'] as $xml) {
                 $xml = (array)$xml;
                 $this->personStore($xml);
             }
         }
 
-        if(isset($xmlFile['shiporder'])){
-            foreach ($xmlFile['shiporder'] as $xml)
-            {
+        if (isset($xmlFile['shiporder'])) {
+            foreach ($xmlFile['shiporder'] as $xml) {
                 $xml = (array) $xml;
                 $this->shipOrderStore($xml);
             }
         }
-
     }
 
-    public function personStore(array $xml){
-
+    public function personStore(array $xml)
+    {
         $person = Person::create([
             'name' => $xml['personname']
         ]);
@@ -47,8 +45,7 @@ class ImportXMLFilesController extends Controller
         $xmlPhones = (array)$xml['phones'];
         $phones = (array) array_shift($xmlPhones);
 
-        foreach ($phones as $phone)
-        {
+        foreach ($phones as $phone) {
             Phone::create([
                 'number' => $phone,
                 'people_id' => $person->id
@@ -56,8 +53,8 @@ class ImportXMLFilesController extends Controller
         }
     }
 
-    public function shipOrderStore(array $xml){
-
+    public function shipOrderStore(array $xml)
+    {
         $shipto = (array) $xml['shipto'];
 
         $shipOrder = ShipOrder::create([
@@ -70,12 +67,10 @@ class ImportXMLFilesController extends Controller
 
         $xmlItems = (array) $xml['items'];
 
-        foreach ($xmlItems as $item)
-        {
-
+        foreach ($xmlItems as $item) {
             $item = (array) $item;
 
-            if (isset($item['title']))
+            if (isset($item['title'])) {
                 Item::create([
                     'title' => $item['title'],
                     'note' => $item['note'],
@@ -83,9 +78,8 @@ class ImportXMLFilesController extends Controller
                     'price' => $item['price'],
                     'ship_order_id' => $shipOrder->id
                 ]);
-            else {
-                foreach ($item as $itemOrder)
-                {
+            } else {
+                foreach ($item as $itemOrder) {
                     $itemOrder = (array) $itemOrder;
 
                     Item::create([
