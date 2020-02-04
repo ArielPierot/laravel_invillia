@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28cb9f13-b57b-4c96-b002-6f8becbd14ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/testes/people.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/testes/shiporders.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ImportFileXMLTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/LoginTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.php_cs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.php_cs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/ItemTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/ItemTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/PersonTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/PersonTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImportXMLFilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImportXMLFilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ImportXMLFilesRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arquivos_teste/people.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arquivos_teste/shiporders.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580822904090</updated>
       <workItem from="1580822905606" duration="7353000" />
-      <workItem from="1580832643160" duration="11346000" />
+      <workItem from="1580832643160" duration="15675000" />
     </task>
     <servers />
   </component>
@@ -195,10 +201,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="731" y="292" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580845237172">
+    <state x="731" y="286" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580845915973">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="731" y="292" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1580845237172" />
+    <state x="731" y="286" width="524" height="497" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1580845915973" />
     <state x="781" y="310" width="424" height="497" key="FileChooserDialogImpl" timestamp="1580833553835">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -207,18 +213,18 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="720" y="366" width="545" height="386" key="NewPhpClassDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1580833627881" />
-    <state x="641" y="286" width="1095" height="528" key="find.popup" timestamp="1580842664246">
+    <state x="641" y="286" width="1095" height="528" key="find.popup" timestamp="1580847605597">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="641" y="286" width="1095" height="528" key="find.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580842664246" />
+    <state x="641" y="286" width="1095" height="528" key="find.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580847605597" />
     <state x="659" y="249" key="run.anything.popup" timestamp="1580845066608">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="659" y="249" key="run.anything.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580845066608" />
-    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup" timestamp="1580844938721">
+    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup" timestamp="1580847941695">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741/1366.0.1366.768@67.27.1299.741" timestamp="1580823942016" />
-    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580844938721" />
+    <state x="514" y="115" width="958" height="964" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1580847941695" />
   </component>
 </project>

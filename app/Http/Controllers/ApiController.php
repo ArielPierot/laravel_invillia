@@ -8,9 +8,7 @@ use App\ShipOrder;
 use App\Transformers\PersonTransformer;
 use App\Transformers\ShipOrderTransformer;
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class ApiController extends Controller
 {
@@ -21,7 +19,8 @@ class ApiController extends Controller
         $input = $request->validated();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
-        $success['token'] =  $user->createToken('Invillia')->accessToken;
+
+        $success['token'] =  $user->createToken('Personal Access Token')->accessToken;
         return response()->json(['success'=>$success], $this->successStatus);
     }
 
@@ -29,7 +28,7 @@ class ApiController extends Controller
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken('Invillia')-> accessToken;
+            $success['token'] =  $user->createToken('Personal Access Token')-> accessToken;
             return response()->json(['success' => $success], $this-> successStatus);
         } else {
             return response()->json(['error'=>'Unauthorized'], 401);
