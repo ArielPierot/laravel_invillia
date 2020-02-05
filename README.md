@@ -12,7 +12,7 @@ $ sudo apt install mysql-server
 # Com o comando abaixo você vai configurar o mysql instalado 
 $ sudo mysql_secure_installation
 
-## Instale o DBEaver pelo link https://dbeaver.io/
+# Instale o DBEaver pelo link https://dbeaver.io/
 # Cria a conexão para o servidor de mysql com os dados que você passou durante a configuração.
 # Crie um banco de dados com o nome: laravel_invillia
 
