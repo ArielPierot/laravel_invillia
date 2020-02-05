@@ -107,7 +107,9 @@ Agora você vai deixar sua aplicação online:
 $ php artisan serve
 ```
 
-Acessar o endereço abaixo para fazer upload dos arquivos:
+Acessar o endereço abaixo para fazer upload dos arquivos XML.
+Primeiro inserir o arquivo people.xml e depois shiporders.xml que estão na pasta public/testes
+Obs.: Tem um teste de feature fazendo o processo de importação na aplicação:
 ```
 http://localhost:8000/xml/create
 ```
