@@ -13,9 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','ImportXMLFilesController@create')->name('xml.create');
 
 Route::get('/xml/create', 'ImportXMLFilesController@create')->name('xml.create');
 

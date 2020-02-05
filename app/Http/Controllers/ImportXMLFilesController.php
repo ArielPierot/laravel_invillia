@@ -20,78 +20,53 @@ class ImportXMLFilesController extends Controller
     {
         $file = $request->file('file');
 
-        $xmlFile = (array) new SimpleXMLElement($file, null, true);
+        $xmlFile = simplexml_load_file($file);
 
-        if (isset($xmlFile['person'])) {
-            foreach ($xmlFile['person'] as $xml) {
-                $xml = (array)$xml;
+        if (isset($xmlFile->person)) {
+            foreach ($xmlFile->children() as $xml) {
                 $this->personStore($xml);
             }
         }
 
-        if (isset($xmlFile['shiporder'])) {
-            foreach ($xmlFile['shiporder'] as $xml) {
-                $xml = (array) $xml;
+        if (isset($xmlFile->shiporder)) {
+            foreach ($xmlFile->children() as $xml) {
                 $this->shipOrderStore($xml);
             }
         }
     }
 
-    public function personStore(array $xml)
+    public function personStore(SimpleXMLElement $xml)
     {
         $person = Person::create([
-            'name' => $xml['personname']
+            'name' => (string) $xml->personname
         ]);
 
-        $xmlPhones = (array)$xml['phones'];
-        $phones = (array) array_shift($xmlPhones);
-
-        foreach ($phones as $phone) {
+        foreach ($xml->phones->children() as $phone) {
             Phone::create([
-                'number' => $phone,
+                'number' => (string) $phone,
                 'people_id' => $person->id
             ]);
         }
     }
 
-    public function shipOrderStore(array $xml)
+    public function shipOrderStore(SimpleXMLElement $xml)
     {
-        $shipto = (array) $xml['shipto'];
-
         $shipOrder = ShipOrder::create([
-            'people_id' => $xml['orderperson'],
-            'shipto_name' => $shipto['name'],
-            'shipto_address' => $shipto['address'],
-            'shipto_city' => $shipto['city'],
-            'shipto_country' => $shipto['country']
+            'people_id' => (string) $xml->orderperson,
+            'shipto_name' => (string)  $xml->shipto->name,
+            'shipto_address' => (string)  $xml->shipto->address,
+            'shipto_city' => (string) $xml->shipto->city,
+            'shipto_country' => (string)  $xml->shipto->country
         ]);
 
-        $xmlItems = (array) $xml['items'];
-
-        foreach ($xmlItems as $item) {
-            $item = (array) $item;
-
-            if (isset($item['title'])) {
-                Item::create([
-                    'title' => $item['title'],
-                    'note' => $item['note'],
-                    'quantity' => $item['quantity'],
-                    'price' => $item['price'],
-                    'ship_order_id' => $shipOrder->id
-                ]);
-            } else {
-                foreach ($item as $itemOrder) {
-                    $itemOrder = (array) $itemOrder;
-
-                    Item::create([
-                        'title' => $itemOrder['title'],
-                        'note' => $itemOrder['note'],
-                        'quantity' => $itemOrder['quantity'],
-                        'price' => $itemOrder['price'],
-                        'ship_order_id' => $shipOrder->id
-                    ]);
-                }
-            }
+        foreach ($xml->items->children() as $item) {
+            $x = Item::create([
+                'title' => (string) $item->title,
+                'note' => (string) $item->note,
+                'quantity' => (string) $item->quantity,
+                'price' => (string) $item->price,
+                'ship_order_id' => (string) $shipOrder->id
+            ]);
         }
     }
 }
