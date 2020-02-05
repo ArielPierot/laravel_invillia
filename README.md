@@ -102,7 +102,7 @@ $ php artisan serve
 
 Acessar o endereço abaixo para fazer upload dos arquivos:
 ```
-http://localhost:4000/xml/create
+http://localhost:8000/xml/create
 ```
 As consultas para api são feitas pelo endereço ex.: localhost:8000/api/login
 ```
