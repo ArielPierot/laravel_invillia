@@ -7,6 +7,8 @@ use App\Person;
 use App\Phone;
 use App\ShipOrder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
 use SimpleXMLElement;
 
 class ImportXMLFilesController extends Controller
@@ -20,7 +22,13 @@ class ImportXMLFilesController extends Controller
     {
         $file = $request->file('file');
 
-        $xmlFile = simplexml_load_file($file);
+        $xmlFile = @simplexml_load_file($file);
+
+        if (!$xmlFile) {
+            return Response::json([
+                'error' => 'Não foi possível processar o arquivo enviado.'
+            ], 422);
+        }
 
         if (isset($xmlFile->person)) {
             foreach ($xmlFile->children() as $xml) {
