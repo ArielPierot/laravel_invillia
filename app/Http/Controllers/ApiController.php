@@ -28,10 +28,10 @@ class ApiController extends Controller
     {
         if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken('Personal Access Token')-> accessToken;
+            $success['token'] =  $user->createToken('Personal Access Token')->accessToken;
             return response()->json(['success' => $success], $this-> successStatus);
         } else {
-            return response()->json(['error'=>'Unauthorized'], 401);
+            return response()->json(['error'=>'Email or password is wrong'], 401);
         }
     }
 
