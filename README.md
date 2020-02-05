@@ -30,6 +30,13 @@ $ sudo apt update
 $ sudo apt install -y php7.4 php7.4-mbstring php7.4-pgsql php7.4-curl php7.4-gd php7.4-gmp php7.4-xml php7.4-zip
 ```
 
+##### Instale o composer via curl:
+```
+$ sudo apt install -y curl
+$ curl -sS https://getcomposer.org/installer | php
+$ sudo mv composer.phar /usr/local/bin/composer
+```
+
 Agora você vai ir pra o diretório raiz do projeto e executar os seguintes comandos:
 ```
 $ composer install
