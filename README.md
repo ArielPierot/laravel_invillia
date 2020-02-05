@@ -100,9 +100,12 @@ Agora você vai deixar sua aplicação online:
 $ php artisan serve
 ```
 
-Acessar o localhost:8000/xml/create para fazer upload dos arquivos:
+Acessar o endereço abaixo para fazer upload dos arquivos:
 ```
 http://localhost:4000/xml/create
 ```
 As consultas para api são feitas pelo endereço ex.: localhost:8000/api/login
+```
+localhost:8000/api/login
+```
 Toda a documentação da API está disponível em https://documenter.getpostman.com/view/1669745/SWTEdwvh?version=latest
