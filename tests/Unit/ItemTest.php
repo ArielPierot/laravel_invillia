@@ -12,7 +12,6 @@ class ItemTest extends TestCase
     /** @test */
     public function it_can_create_a_item_to_the_ship_order()
     {
-
         $person = new Person([
             'name' => 'Name'
         ]);

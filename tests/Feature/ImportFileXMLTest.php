@@ -48,7 +48,5 @@ class ImportFileXMLTest extends TestCase
             'title' => 'Title 3',
             'ship_order_id' => 3
         ]);
-
-
     }
 }
